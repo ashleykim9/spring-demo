@@ -15,7 +15,7 @@ public class DemoApplication {
 	public static void main(String[] args) throws IOException{
 		SpringApplication.run(DemoApplication.class, args);
 		 // Create a new LDClient with your environment-specific SDK key
-		 LDClient ldClient = new LDClient("sdk-15d93f22-d57c-450f-bfc2-20c1547895f3");
+		 LDClient ldClient = new LDClient("YOUR_SDK_KEY");
 
 		 // Set up the user properties. This user should appear on your
 		 // LaunchDarkly users dashboard soon after you run the demo.
@@ -25,7 +25,7 @@ public class DemoApplication {
 								 .custom("groups", LDValue.buildArray().add("beta_testers").build())
 								 .build();
 	 
-		 boolean showFeature = ldClient.boolVariation("test-flag", user, false);
+		 boolean showFeature = ldClient.boolVariation("YOUR_FLAG_KEY", user, false);
 
 		 System.out.println("SDK successfully connected! The value of test-flag is " + showFeature + " for " + user);
 	 
